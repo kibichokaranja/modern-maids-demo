@@ -1,0 +1,102 @@
+═══════════════════════════════════════════════════════════════
+  MODERN MAIDS - DEPLOYMENT CHECKLIST
+═══════════════════════════════════════════════════════════════
+
+📦 STEP 1: GITHUB (5 minutes)
+───────────────────────────────────────────────────────────────
+☐ Create GitHub account at github.com
+☐ Create new repository (name: modern-maids-demo)
+☐ Push your code to GitHub
+   → Use GitHub Desktop OR command line
+   → See BEGINNER_DEPLOY_GUIDE.md for detailed steps
+
+✅ When done: You can see all files on GitHub
+
+
+🚂 STEP 2: RAILWAY - BACKEND (10 minutes)
+───────────────────────────────────────────────────────────────
+☐ Go to railway.app and sign in with GitHub
+☐ Click "New Project" → "Deploy from GitHub repo"
+☐ Select your repository
+☐ Set Root Directory to: server
+☐ Add Environment Variable:
+   Name: JWT_SECRET
+   Value: modern-maids-secret-2024
+☐ Add Environment Variable:
+   Name: CLIENT_URL
+   Value: (leave empty for now)
+☐ Copy your backend URL (looks like: https://xxx.up.railway.app)
+
+✅ When done: Backend is deployed and you have the URL
+
+
+⚡ STEP 3: VERCEL - FRONTEND (10 minutes)
+───────────────────────────────────────────────────────────────
+☐ Go to vercel.com and sign in with GitHub
+☐ Click "Add New Project"
+☐ Import your repository
+☐ Set Root Directory to: client
+☐ Add Environment Variable:
+   Name: NEXT_PUBLIC_API_URL
+   Value: (paste your Railway backend URL from Step 2)
+☐ Click "Deploy"
+☐ Copy your frontend URL (looks like: https://xxx.vercel.app)
+
+✅ When done: Frontend is deployed and you have the URL
+
+
+🔗 STEP 4: CONNECT THEM (2 minutes)
+───────────────────────────────────────────────────────────────
+☐ Go back to Railway
+☐ Go to Settings → Variables
+☐ Edit CLIENT_URL variable
+☐ Paste your Vercel frontend URL
+☐ Save (Railway will auto-redeploy)
+
+✅ When done: Frontend and backend are connected
+
+
+🧪 STEP 5: TEST (3 minutes)
+───────────────────────────────────────────────────────────────
+☐ Open your Vercel URL in browser
+☐ Try logging in as Admin:
+   Email: admin@modernmaids.com
+   Password: admin123
+☐ Try logging in as Cleaner:
+   Email: cleaner@modernmaids.com
+   Password: cleaner123
+☐ Check that pages load correctly
+
+✅ When done: Demo is working!
+
+
+📧 STEP 6: SHARE
+───────────────────────────────────────────────────────────────
+☐ Your demo URL: (your Vercel URL)
+☐ Share these credentials:
+   Admin: admin@modernmaids.com / admin123
+   Cleaner: cleaner@modernmaids.com / cleaner123
+
+✅ When done: Ready to send outreach email!
+
+
+═══════════════════════════════════════════════════════════════
+  TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════
+
+❌ "Cannot connect to backend"
+   → Check CLIENT_URL in Railway matches Vercel URL exactly
+   → Wait 2-3 minutes after updating, then refresh
+
+❌ Login doesn't work
+   → Check browser console (F12) for errors
+   → Verify backend URL is correct in Vercel environment variables
+
+❌ Build fails
+   → Check deployment logs in Railway/Vercel
+   → Make sure Root Directory is set correctly (server/client)
+
+═══════════════════════════════════════════════════════════════
+
+For detailed step-by-step instructions, see: BEGINNER_DEPLOY_GUIDE.md
+
