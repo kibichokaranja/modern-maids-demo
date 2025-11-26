@@ -1,6 +1,6 @@
-﻿{
+{
   "name": "modern-maids-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Backend API server for Modern Maids demo",
   "main": "index.js",
   "type": "module",
@@ -17,3 +17,4 @@
     "jsonwebtoken": "^9.0.2"
   }
 }
+
